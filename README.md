@@ -38,8 +38,6 @@ Plots for each Samples' fluorescence landscape
 
 Run CP Decomposition 
 
-Decomposition
-
 Graph all the components with all their elements
 
 M = gcp(X, 3)
