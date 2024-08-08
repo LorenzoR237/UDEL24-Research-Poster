@@ -1,5 +1,6 @@
 # UDEL24-Research-Poster
 
+Under construction.../._./
 
 Excitation and Emission Matrix(EEM) dataset
 
@@ -45,5 +46,18 @@ Plot the (normalized) factors.
 ![image](https://github.com/user-attachments/assets/f3d26421-bf1b-4cd7-a893-ae96860007fd)
 
 
+Food and Feed dataset
 
+Website:
 
+Relevant papers: 
+
+1. Bro, R, Multi-way Analysis in the Food Industry. Models, Algorithms, and Applications. 1998. Ph.D. Thesis, University of Amsterdam (NL) & Royal Veterinary and Agricultural University (DK).
+
+2. Kiers, H.A.L. (1998) A three-step algorithm for Candecomp/Parafac analysis of large data sets with multicollinearity, Journal of Chemometrics, 12, 155-171.
+
+using BenchmarkTools, GCPDecompositions, DataFrames, DelimitedFiles, CSV, XLSX, CairoMakie, LinearAlgebra, Makie, GeometryBasics, NaturalEarth, LibGEOS, GADM, ColorSchemes, Colors
+
+Load data
+
+Run CP Decomposition 
