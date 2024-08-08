@@ -15,6 +15,10 @@ using CairoMakie, GCPDecompositions, LinearAlgebra
 Load data
 
 using MAT, ZipFile
+X = vars["X"]["data"]
+
+
+Here the tensor data is extracted from the "data" variable, which is inside X in the original data set, and it's named X.
 
 
 Run CP Decomposition 
