@@ -60,4 +60,18 @@ using BenchmarkTools, GCPDecompositions, DataFrames, DelimitedFiles, CSV, XLSX, 
 
 Load data
 
+FAO_dataset = CSV.read("data/FAO.csv", DataFrame)
+
+Create tensor
+
+FAO_tensor
+
 Run CP Decomposition 
+
+FAO_M = gcp(FAO_tensor, 3, loss = GCPLosses.NonnegativeLeastSquares(), algorithm = GCPAlgorithms.LBFGSB(;maxfun=500000, maxiter=500000, pgtol = 1e-7))
+
+Graph all the components with all their (normalized factors).
+![image](https://github.com/user-attachments/assets/9ed58c42-25e1-45c2-a890-09769be2b108)
+
+
+
