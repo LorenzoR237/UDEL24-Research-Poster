@@ -38,6 +38,17 @@ Plots for each Samples' fluorescence landscape
 
 Run CP Decomposition 
 
+Decomposition
+
+Graph all the components with all their elements
+
+M = gcp(X, 3)
+
+Plot the (normalized) factors.
+
+component_order = [1,3,2]
+
+![image](https://github.com/user-attachments/assets/f3d26421-bf1b-4cd7-a893-ae96860007fd)
 
 
 
