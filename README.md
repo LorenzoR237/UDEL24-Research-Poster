@@ -10,11 +10,9 @@ Relevant Papers:
 
 2. Kiers, H.A.L. (1998) A three-step algorithm for Candecomp/Parafac analysis of large data sets with multicollinearity, Journal of Chemometrics, 12, 155-171.
 
-
-'''
+```
 using CairoMakie, GCPDecompositions, LinearAlgebra
-'''
-
+```
 
 Load data
 
