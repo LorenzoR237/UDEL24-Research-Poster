@@ -21,7 +21,7 @@ using CairoMakie, GCPDecompositions, LinearAlgebra
 using MAT, ZipFile
 ```
 
-```
+```Julia
 vars = matread("data/EEM18.mat")
 ```
 
