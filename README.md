@@ -231,17 +231,14 @@ excitations_wavelength = Float64[
 ```Julia
 with_theme() do
 	
-	fig = Figure(size = (1150, 800)) # a figure has its own coordinate system. 
-
-	#zlevels = collect(range(-1.1e4, 7e5, 20))
+	fig = Figure(size = (1150, 800))
 
 	# Plot contour maps
 	for idx in 1:size(X, 1)
-		row, col = fldmod1(idx, 6)# fld1 and mod1 
+		row, col = fldmod1(idx, 6)
 		contourf(fig[row, col],
 			excitations_wavelength, emissions_wavelength, permutedims(X[idx, :, :]), levels = collect(range(-1.1e4, 7e5, 20)), 
-			colormap = :deep;# use collect to make it an array/vector
-			# range() creates a range object that is not a vector/array
+			colormap = :deep;
 			axis = (;
 				title = "Mix $(mixtures[idx, :])",
 				xlabel = "excitation (nm)",
@@ -257,11 +254,10 @@ with_theme() do
 
 
 	
-	# Add title
+	# title
 	Label(fig[0, :], "EEM Data Graphs"; fontsize = 25)
 
-	#fig
-	HTML(repr("text/html", fig))
+	fig
 end
 ```
 ![image](https://github.com/user-attachments/assets/4323c9eb-51e5-45e0-8dbc-3c8e10b68522)
