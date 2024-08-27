@@ -14,7 +14,7 @@ Relevant Papers:
 using CairoMakie, GCPDecompositions, LinearAlgebra
 ```
 
-## Load data
+Load data
 
 ```Julia
 using MAT, ZipFile
@@ -57,7 +57,7 @@ Plot the (normalized) factors.
 ![image](https://github.com/user-attachments/assets/f3d26421-bf1b-4cd7-a893-ae96860007fd)
 
 
-Food and Feed dataset
+## Food and Feed dataset
 
 Website:
 
