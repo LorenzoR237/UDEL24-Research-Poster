@@ -262,7 +262,27 @@ end
 ```
 ![image](https://github.com/user-attachments/assets/4323c9eb-51e5-45e0-8dbc-3c8e10b68522)
 
-Plots for each Samples' fluorescence landscape
+#### Plots for each Samples' fluorescence landscape
+```
+with_theme() do
+    fig = Figure(; size=(2500, 1100))
+
+    # Loop through samples
+    for idx in 1:size(X,1)
+        ax = Axis3(fig[fldmod1(idx, 6)...]; title="Mix $(mixtures[idx, :])",
+            xlabel="emisson (nm)", xticks=250:100:450,
+            ylabel="excitation (nm)", yticks=240:30:300,
+            zlabel=""
+        )
+        surface!(ax, emissions_wavelength, excitations_wavelength, X[idx,:,:], colormap = :deep)
+		    resize_to_layout!(fig)
+    end
+
+    rowgap!(fig.layout, 20)
+    colgap!(fig.layout, 30)
+    fig
+end
+```
 ![image](https://github.com/user-attachments/assets/3c695cf6-e8d3-4e82-bd2a-f101d17ec33d)
 
 Run CP Decomposition 
