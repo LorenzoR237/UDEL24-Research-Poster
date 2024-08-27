@@ -161,7 +161,7 @@ Mode ranges for y and x axis labels.
 ```Julia
 emissions_wavelength = vec(vars["mode_ranges"][1, 2])
 ```
-```
+```Julia
 excitations_wavelength = vec(vars["mode_ranges"][1, 3])
 ```
 
