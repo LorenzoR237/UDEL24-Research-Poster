@@ -138,6 +138,24 @@ Here we extract the 18x3 matrix found in the "mixtures" variable from the origin
 mixtures = vars["mixtures"]
 ```
 
+```
+18×3 Matrix{Float64}:
+ 5.0   0.0   0.0
+ 0.0   5.0   0.0
+ 0.0   0.0   5.0
+ 1.25  5.0   3.75
+ 3.75  1.25  5.0
+ 5.0   3.75  2.5
+ 3.75  3.75  5.0
+ ⋮           
+ 2.5   3.75  1.25
+ 3.75  0.0   2.5
+ 2.5   0.0   3.75
+ 5.0   0.0   1.25
+ 3.75  0.0   3.75
+ 3.75  0.0   5.0
+```
+
 Mode ranges for y and x axis labels.
 
 ```Julia
