@@ -228,6 +228,42 @@ excitations_wavelength = Float64[
 ```
 
 #### EMM data graphs
+```Julia
+with_theme() do
+	
+	fig = Figure(size = (1150, 800)) # a figure has its own coordinate system. 
+
+	#zlevels = collect(range(-1.1e4, 7e5, 20))
+
+	# Plot contour maps
+	for idx in 1:size(X, 1)
+		row, col = fldmod1(idx, 6)# fld1 and mod1 
+		contourf(fig[row, col],
+			excitations_wavelength, emissions_wavelength, permutedims(X[idx, :, :]), levels = collect(range(-1.1e4, 7e5, 20)), 
+			colormap = :deep;# use collect to make it an array/vector
+			# range() creates a range object that is not a vector/array
+			axis = (;
+				title = "Mix $(mixtures[idx, :])",
+				xlabel = "excitation (nm)",
+				ylabel = "emission (nm)",
+				xticks = 220:40:300,
+			
+			
+			)
+		)
+	end
+
+	Colorbar(fig[:,7]; label = "Fluorescence Intensity", height = Relative(1), colormap = :deep)
+
+
+	
+	# Add title
+	Label(fig[0, :], "EEM Data Graphs"; fontsize = 25)
+
+	#fig
+	HTML(repr("text/html", fig))
+end
+```
 ![image](https://github.com/user-attachments/assets/4323c9eb-51e5-45e0-8dbc-3c8e10b68522)
 
 Plots for each Samples' fluorescence landscape
