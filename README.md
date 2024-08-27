@@ -156,7 +156,7 @@ mixtures = vars["mixtures"]
  3.75  0.0   5.0
 ```
 
-Mode ranges for y and x axis labels.
+#### Mode ranges for y and x axis labels.
 
 ```Julia
 emissions_wavelength = vec(vars["mode_ranges"][1, 2])
@@ -165,7 +165,7 @@ emissions_wavelength = vec(vars["mode_ranges"][1, 2])
 excitations_wavelength = vec(vars["mode_ranges"][1, 3])
 ```
 
-EMM data graphs
+#### EMM data graphs
 ![image](https://github.com/user-attachments/assets/4323c9eb-51e5-45e0-8dbc-3c8e10b68522)
 
 Plots for each Samples' fluorescence landscape
