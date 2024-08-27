@@ -21,6 +21,10 @@ using CairoMakie, GCPDecompositions, LinearAlgebra
 using MAT, ZipFile
 ```
 
+```
+vars = matread("data/EEM18.mat")
+```
+
 Here the tensor data is extracted from the "data" variable, which is inside X in the original data set, and it's named X.
 
 ```Julia
