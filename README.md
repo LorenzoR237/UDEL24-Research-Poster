@@ -161,7 +161,6 @@ mixtures = vars["mixtures"]
 ```Julia
 emissions_wavelength = vec(vars["mode_ranges"][1, 2])
 ```
-
 ```
 emissions_wavelength = Float64[
 250.0
@@ -198,9 +197,34 @@ more
 ]
 ```
 
-
 ```Julia
 excitations_wavelength = vec(vars["mode_ranges"][1, 3])
+```
+
+```
+excitations_wavelength = Float64[
+210.0
+215.0
+220.0
+225.0
+230.0
+235.0
+240.0
+245.0
+250.0
+255.0
+260.0
+265.0
+270.0
+275.0
+280.0
+285.0
+290.0
+295.0
+300.0
+305.0
+310.0
+]
 ```
 
 #### EMM data graphs
