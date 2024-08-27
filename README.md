@@ -4,7 +4,7 @@ Under construction.../._./
 
 ## Excitation and Emission Matrix(EEM) dataset
 
-Website:
+Website: https://gitlab.com/tensors/tensor_data_eem/-/blob/master/README.md?ref_type=heads
 Relevant Papers:
 1. Bro, R, Multi-way Analysis in the Food Industry. Models, Algorithms, and Applications. 1998. Ph.D. Thesis, University of Amsterdam (NL) & Royal Veterinary and Agricultural University (DK).
 
@@ -59,7 +59,7 @@ Plot the (normalized) factors.
 
 ## Food and Feed dataset
 
-Website:
+Website: https://www.kaggle.com/datasets/dorbicycle/world-foodfeed-production
 
 Relevant papers: 
 
