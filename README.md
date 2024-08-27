@@ -263,7 +263,7 @@ end
 ![image](https://github.com/user-attachments/assets/4323c9eb-51e5-45e0-8dbc-3c8e10b68522)
 
 #### Plots for each Samples' fluorescence landscape
-```
+```Julia
 with_theme() do
     fig = Figure(; size=(2500, 1100))
 
@@ -286,9 +286,19 @@ end
 ![image](https://github.com/user-attachments/assets/3c695cf6-e8d3-4e82-bd2a-f101d17ec33d)
 
 Run CP Decomposition 
-
 ```Julia
 M = gcp(X, 3)
+```
+```
+18×251×21 CPD{Float64, 3, Vector{Float64}, Matrix{Float64}} with 3 components
+λ weights:
+3-element Vector{Float64}: …
+U[1] factor matrix:
+18×3 Matrix{Float64}: …
+U[2] factor matrix:
+251×3 Matrix{Float64}: …
+U[3] factor matrix:
+21×3 Matrix{Float64}: …
 ```
 
 Plot the (normalized) factors.
