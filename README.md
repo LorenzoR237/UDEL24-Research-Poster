@@ -14,7 +14,7 @@ Relevant Papers:
 using CairoMakie, GCPDecompositions, LinearAlgebra
 ```
 
-Load data
+## Load data
 
 ```Julia
 using MAT, ZipFile
