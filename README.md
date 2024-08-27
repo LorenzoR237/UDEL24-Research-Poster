@@ -162,9 +162,8 @@ mixtures = vars["mixtures"]
 emissions_wavelength = vec(vars["mode_ranges"][1, 2])
 ```
 
-```Julia
-emissions_wavelength
-Float64[
+```
+emissions_wavelength = Float64[
 250.0
 251.0
 252.0
