@@ -6,7 +6,7 @@ Under construction.../._./
 
 Website: https://gitlab.com/tensors/tensor_data_eem/-/blob/master/README.md?ref_type=heads
 
-Relevant Papers:
+Relevant papers:
 1. Bro, R, Multi-way Analysis in the Food Industry. Models, Algorithms, and Applications. 1998. Ph.D. Thesis, University of Amsterdam (NL) & Royal Veterinary and Agricultural University (DK).
 
 2. Kiers, H.A.L. (1998) A three-step algorithm for Candecomp/Parafac analysis of large data sets with multicollinearity, Journal of Chemometrics, 12, 155-171.
