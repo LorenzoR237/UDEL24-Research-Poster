@@ -285,7 +285,7 @@ end
 ```
 ![image](https://github.com/user-attachments/assets/3c695cf6-e8d3-4e82-bd2a-f101d17ec33d)
 
-Run CP Decomposition 
+#### Run CP Decomposition 
 ```Julia
 M = gcp(X, 3)
 ```
@@ -301,7 +301,45 @@ U[3] factor matrix:
 21×3 Matrix{Float64}: …
 ```
 
-Plot the (normalized) factors.
+#### Plot the (normalized) factors.
+```Julia
+with_theme() do
+    fig = Figure()
+
+    # Plot factors (normalized by max)
+    for row in 1:ncomponents(M)
+		#Concentration of Tryptophan in each sample
+        barplot(fig[row,1], 1:size(X,1), normalize(M.U[1][:,component_order[row]], 				Inf), color = :orange, axis=(;xticks=0:3:18))
+		#Concentration of Tryptophan in each sample
+        lines(fig[row,3], emissions_wavelength, normalize(M.U[2][:,component_order[row]], Inf), color = :orange, axis=(;xticks=250:50:500))
+        lines(fig[row,2], excitations_wavelength, normalize(M.U[3][:,component_order[row]], Inf), color = :orange, axis=(;xticks=210:25:310))
+    end
+
+	
+	
+    # Link and hide x axes
+    linkxaxes!(contents(fig[:,1])...)
+    linkxaxes!(contents(fig[:,2])...)
+    linkxaxes!(contents(fig[:,3])...)
+    hidexdecorations!.(contents(fig[1:2,:]); ticks=false, grid=false)
+	
+
+    # Link and hide y axes
+    linkyaxes!(contents(fig.layout)...)
+    hideydecorations!.(contents(fig.layout); ticks=false, grid=false)
+
+    # Add labels
+    Label(fig[0,1], "Samples"; tellwidth=false, fontsize=15, font=:bold)
+    Label(fig[0,2], "Excitation"; tellwidth=false, fontsize=15, font=:bold)
+    Label(fig[0,3], "Emission"; tellwidth=false, fontsize=15, font=:bold)
+
+	Label(fig[1,0], "Component 1"; tellheight=false, font = :bold, fontsize=15, rotation = pi/2)
+    Label(fig[2,0], "Component 2"; tellheight=false, font = :bold, fontsize=15, 		rotation = pi/2)
+    Label(fig[3,0], "Component 3"; tellheight=false, font = :bold, fontsize=15, 			rotation = pi/2)
+
+    fig
+end
+```
 
 ![image](https://github.com/user-attachments/assets/f3d26421-bf1b-4cd7-a893-ae96860007fd)
 
@@ -318,23 +356,23 @@ Relevant papers:
 
 using BenchmarkTools, GCPDecompositions, DataFrames, DelimitedFiles, CSV, XLSX, CairoMakie, LinearAlgebra, Makie, GeometryBasics, NaturalEarth, LibGEOS, GADM, ColorSchemes, Colors
 
-Load data
+#### Load data
 
 ```Julia
 FAO_dataset = CSV.read("data/FAO.csv", DataFrame)
 ```
 
-Create tensor
+#### Create tensor
 
 FAO_tensor
 
-Run CP Decomposition 
+#### Run CP Decomposition 
 
 ```Julia
 FAO_M = gcp(FAO_tensor, 3, loss = GCPLosses.NonnegativeLeastSquares(), algorithm = GCPAlgorithms.LBFGSB(;maxfun=500000, maxiter=500000, pgtol = 1e-7))
 ```
 
-Graph all the components with all their (normalized factors).
+#### Graph all the components with all their (normalized factors).
 ![image](https://github.com/user-attachments/assets/9ed58c42-25e1-45c2-a890-09769be2b108)
 
 
