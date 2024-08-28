@@ -361,20 +361,20 @@ using BenchmarkTools, GCPDecompositions, DataFrames, DelimitedFiles, CSV, XLSX, 
 ```Julia
 FAO_dataset = CSV.read("data/FAO.csv", DataFrame)
 ```
-|  | Area Abbrevation | Area Code |     Area      | Item Code |          Item            | Element Code | Element |    Unit     | ... more|
-|  |      :---:       |   :---:   |     :---:     |  :---:    |          :---:           |    :---:     |  :---:  |    :---:    |  :---:  |
-|1 |"AFG"             |     2     | "Afghanistan" |2848       |   "Wheat and products"   |5142          | "Food"  |"1000 tonnes"|         |
-|2 |"AFG"             |     2     | "Afghanistan" |2848       |"Rice (Milled Equivalent)"|5142          | "Food"  |"1000 tonnes"|         |
-|3 |"AFG"             |     2     | "Afghanistan" |2761       |  "Barley and products"   |5521          | "Feed"  |"1000 tonnes"|         |
-|4 |"AFG"             |     2     | "Afghanistan" |2680       |  "Barley and products"   |5542          | "Food"  |"1000 tonnes"|         |
-|5 |"AFG"             |     2     | "Afghanistan" |2905       |   "Maize and products"   |5521          | "Feed"  |"1000 tonnes"|         |
-|6 |"AFG"             |     2     | "Afghanistan" |2907       |   "Maize and products"   |5542          | "Food"  |"1000 tonnes"|         |
-|7 |"AFG"             |     2     | "Afghanistan" |2908       |  "Millet and products"   |5542          | "Food"  |"1000 tonnes"|         |
-|8 |"AFG"             |     2     | "Afghanistan" |2909       |     "Cereals, Other"     |5542          | "Food"  |"1000 tonnes"|         |
-|9 |"AFG"             |     2     | "Afghanistan" |2911       |  "Potatoes and products" |5542          | "Food"  |"1000 tonnes"|         |
-|10|"AFG"             |     2     | "Afghanistan" |2912       |       "Sugar cane"       |5521          | "Feed"  |"1000 tonnes"|         |
-|...more|             |           |               |2913       |                          |              |         |             |         |
-|21477|"ZWE"          |    181    |  "Zimbabwe"   |2928       |     "Miscellaneous"      |5142          | "Food"  |"1000 tonnes"|         |
+|       | Area Abbrevation | Area Code |     Area      | Item Code |          Item            | Element Code | Element |    Unit     | ... more|
+| :---: |      :---:       |   :---:   |     :---:     |  :---:    |          :---:           |    :---:     |  :---:  |    :---:    |  :---:  |
+|1      |"AFG"             |     2     | "Afghanistan" |2848       |   "Wheat and products"   |5142          | "Food"  |"1000 tonnes"|         |
+|2      |"AFG"             |     2     | "Afghanistan" |2848       |"Rice (Milled Equivalent)"|5142          | "Food"  |"1000 tonnes"|         |
+|3      |"AFG"             |     2     | "Afghanistan" |2761       |  "Barley and products"   |5521          | "Feed"  |"1000 tonnes"|         |
+|4      |"AFG"             |     2     | "Afghanistan" |2680       |  "Barley and products"   |5542          | "Food"  |"1000 tonnes"|         |
+|5      |"AFG"             |     2     | "Afghanistan" |2905       |   "Maize and products"   |5521          | "Feed"  |"1000 tonnes"|         |
+|6      |"AFG"             |     2     | "Afghanistan" |2907       |   "Maize and products"   |5542          | "Food"  |"1000 tonnes"|         |
+|7      |"AFG"             |     2     | "Afghanistan" |2908       |  "Millet and products"   |5542          | "Food"  |"1000 tonnes"|         |
+|8      |"AFG"             |     2     | "Afghanistan" |2909       |     "Cereals, Other"     |5542          | "Food"  |"1000 tonnes"|         |
+|9      |"AFG"             |     2     | "Afghanistan" |2911       |  "Potatoes and products" |5542          | "Food"  |"1000 tonnes"|         |
+|10     |"AFG"             |     2     | "Afghanistan" |2912       |       "Sugar cane"       |5521          | "Feed"  |"1000 tonnes"|         |
+|...more|                  |           |               |           |                          |              |         |             |         |
+|21477  |"ZWE"             |    181    |  "Zimbabwe"   |2928       |     "Miscellaneous"      |5142          | "Food"  |"1000 tonnes"|         |
 
 #### Create tensor
 
