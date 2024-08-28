@@ -362,6 +362,10 @@ using BenchmarkTools, GCPDecompositions, DataFrames, DelimitedFiles, CSV, XLSX, 
 FAO_dataset = CSV.read("data/FAO.csv", DataFrame)
 ```
 ```
+FAO_dataset = read
+```
+```
+(
 21477×63 Matrix{Any}:
  "AFG"    2  "Afghanistan"  2511  …  4252  4538  4605  4711  4810  4895
  "AFG"    2  "Afghanistan"  2805      490   415   442   476   425   422
@@ -379,6 +383,13 @@ FAO_dataset = CSV.read("data/FAO.csv", DataFrame)
  "ZWE"  181  "Zimbabwe"     2928        0     0     0     0     0     0
 1×63 Matrix{AbstractString}:
  "Area Abbreviation"  "Area Code"  "Area"  …  "Y2010"  "Y2011"  "Y2012"  "Y2013"
+)
+```
+```
+| Area Abbrevation | Area Code |     Area      |
+| :---             |     :---: |          ---: |
+|       "AFG"      |     2     | "Afghanistan" |
+| git diff     | git diff       | git diff     |
 ```
 
 #### Create tensor
