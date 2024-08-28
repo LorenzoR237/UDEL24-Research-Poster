@@ -361,6 +361,113 @@ using BenchmarkTools, GCPDecompositions, DataFrames, DelimitedFiles, CSV, XLSX, 
 ```Julia
 FAO_dataset = CSV.read("data/FAO.csv", DataFrame)
 ```
+```
+
+FAO_dataset
+Area Abbreviation	Area Code	Area	Item Code	Item	Element Code	Element	Unit	more
+String3	Int64	String	Int64	String31	Int64	String7	String15	
+1	
+"AFG"
+2
+"Afghanistan"
+2511
+"Wheat and products"
+5142
+"Food"
+"1000 tonnes"
+2	
+"AFG"
+2
+"Afghanistan"
+2805
+"Rice (Milled Equivalent)"
+5142
+"Food"
+"1000 tonnes"
+3	
+"AFG"
+2
+"Afghanistan"
+2513
+"Barley and products"
+5521
+"Feed"
+"1000 tonnes"
+4	
+"AFG"
+2
+"Afghanistan"
+2513
+"Barley and products"
+5142
+"Food"
+"1000 tonnes"
+5	
+"AFG"
+2
+"Afghanistan"
+2514
+"Maize and products"
+5521
+"Feed"
+"1000 tonnes"
+6	
+"AFG"
+2
+"Afghanistan"
+2514
+"Maize and products"
+5142
+"Food"
+"1000 tonnes"
+7	
+"AFG"
+2
+"Afghanistan"
+2517
+"Millet and products"
+5142
+"Food"
+"1000 tonnes"
+8	
+"AFG"
+2
+"Afghanistan"
+2520
+"Cereals, Other"
+5142
+"Food"
+"1000 tonnes"
+9	
+"AFG"
+2
+"Afghanistan"
+2531
+"Potatoes and products"
+5142
+"Food"
+"1000 tonnes"
+10	
+"AFG"
+2
+"Afghanistan"
+2536
+"Sugar cane"
+5521
+"Feed"
+"1000 tonnes"
+more
+21477	
+"ZWE"
+181
+"Zimbabwe"
+2928
+"Miscellaneous"
+5142
+"Food"
+"1000 tonnes"
+
+```
 
 #### Create tensor
 
