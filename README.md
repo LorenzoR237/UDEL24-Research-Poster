@@ -378,6 +378,26 @@ FAO_dataset = CSV.read("data/FAO.csv", DataFrame)
 
 #### Create tensor
 ```Julia
+begin
+	countries = unique(FAO_dataset[:, :Area])
+	food_types = unique(FAO_dataset[:, :Element])
+	years = 1961:2013
+	@assert all(in(names(FAO_dataset)), string.("Y", years))
+
+	FAO_tensor = zeros(length(countries), length(years), length(food_types))
+	for FAO_row in eachrow(FAO_dataset)
+		country_idx   = only(findall(==(FAO_row[:Area]), countries))
+		food_type_idx = only(findall(==(FAO_row[:Element]), food_types))
+		for (year_idx, year) in enumerate(years)
+			quantity = FAO_row["Y$(year)"]
+			if !ismissing(quantity)
+				FAO_tensor[country_idx, year_idx, food_type_idx] += quantity
+			end
+		end
+	end
+end
+```
+```Julia
 FAO_tensor
 ```
 ```
@@ -433,6 +453,66 @@ U[3] factor matrix:
 ```
 
 #### Graph all the components with all their (normalized factors).
+
+```Julia
+poster_fig = with_theme() do
+    fig = Figure(; size=(800, 500))
+
+    # Plot factors (normalized by max)
+
+	# Reorder
+	perm = [3, 1, 2]
+	M = deepcopy(FAO_M)
+	for i in 1:ndims(M)
+		M.U[i] .= M.U[i][:, perm]
+	end
+	
+    for row in 1:ncomponents(M)
+		ax = GeoAxis(fig[row,1], xgridvisible = false, ygridvisible = false)
+		ax.xticklabelsvisible[] = false
+		ax.yticklabelsvisible[] = false
+			 
+		hm = poly!(ax, natearth_df[NATEARTH_IDX,:geometry];
+			color = normalize(M.U[1][:,row], Inf), colorrange = (0,1),
+    		strokecolor = :black, strokewidth = 0.5,	
+		)
+		
+		poly!(ax, natearth_df[Missing_Countries, :geometry]; strokecolor=:black, strokewidth = 1, color=(:gray))
+		lines(fig[row,2], years, normalize(M.U[2][:,row], Inf), color = :green, axis = (; xticks= 1960:10:2020))
+
+
+		
+        barplot(fig[row,3], 1:length(food_types), normalize(M.U[3][:,row], Inf);
+		axis = (; xticks = (1:length(food_types), food_types)), color = :green)
+	end
+
+
+    # Link and hide x axes
+    linkxaxes!(contents(fig[:,2])...)
+    linkxaxes!(contents(fig[:,3])...)
+    hidexdecorations!.(contents(fig[1:end-1,2:3]); ticks=false, grid=false)
+	linkyaxes!(contents(fig[:,2])...)
+    linkyaxes!(contents(fig[:,3])...)
+	hideydecorations!.(contents(fig[1:end,2:3]); ticks=false, grid=false)
+	
+    # Add labels
+    Label(fig[0,1], "Country"; tellwidth=false, font = :bold, fontsize=20)
+    Label(fig[0,2], "Year"; tellwidth=false, font = :bold, fontsize=20)
+    Label(fig[0,3], "Type"; tellwidth=false, font = :bold, fontsize=20)
+
+	Label(fig[1,0], "Component 1"; tellheight=false, font = :bold, fontsize=15, rotation = pi/2)
+    Label(fig[2,0], "Component 2"; tellheight=false, font = :bold, fontsize=15, 		rotation = pi/2)
+    Label(fig[3,0], "Component 3"; tellheight=false, font = :bold, fontsize=15, 			rotation = pi/2)
+	
+	rowgap!(fig.layout, -20)
+	colsize!(fig.layout, 3, Relative(1/5))
+	colgap!(fig.layout, 1, -30)
+	colgap!(fig.layout, 2, -30)
+	fig
+end
+```
+
+
 ![image](https://github.com/user-attachments/assets/9ed58c42-25e1-45c2-a890-09769be2b108)
 
 
