@@ -389,7 +389,7 @@ FAO_dataset = read
 | Area Abbrevation | Area Code |     Area      |
 | :---             |     :---: |          ---: |
 |       "AFG"      |     2     | "Afghanistan" |
-| git diff     | git diff       | git diff     |
+| git diff         | git diff  | git diff      |
 ```
 
 #### Create tensor
