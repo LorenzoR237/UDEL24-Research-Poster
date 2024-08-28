@@ -352,7 +352,9 @@ Relevant papers:
 
 2. Kiers, H.A.L. (1998) A three-step algorithm for Candecomp/Parafac analysis of large data sets with multicollinearity, Journal of Chemometrics, 12, 155-171.
 
-using BenchmarkTools, GCPDecompositions, DataFrames, DelimitedFiles, CSV, XLSX, CairoMakie, LinearAlgebra, Makie, GeometryBasics, NaturalEarth, LibGEOS, GADM, ColorSchemes, Colors
+```Julia
+using BenchmarkTools, GCPDecompositions, DataFrames, CSV, CairoMakie, LinearAlgebra, GeometryBasics, NaturalEarth, LibGEOS, GADM
+```
 
 #### Load data
 
