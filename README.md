@@ -385,7 +385,7 @@ FAO_dataset = read
  "Area Abbreviation"  "Area Code"  "Area"  …  "Y2010"  "Y2011"  "Y2012"  "Y2013"
 )
 ```
-```
+
 | Area Abbrevation | Area Code |     Area      |
 |      :---:       |   :---:   |     :---:     |
 |"AFG"             |     2     | "Afghanistan" |
@@ -393,7 +393,7 @@ FAO_dataset = read
 |"AFG"             |     2     | "Afghanistan" |
 |"AFG"             |     2     | "Afghanistan" |
 |"AFG"             |     2     | "Afghanistan" |
-```
+
 
 #### Create tensor
 
