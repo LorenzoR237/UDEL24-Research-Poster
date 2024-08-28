@@ -361,39 +361,20 @@ using BenchmarkTools, GCPDecompositions, DataFrames, DelimitedFiles, CSV, XLSX, 
 ```Julia
 FAO_dataset = CSV.read("data/FAO.csv", DataFrame)
 ```
-```
-FAO_dataset = read
-```
-```
-(
-21477×63 Matrix{Any}:
- "AFG"    2  "Afghanistan"  2511  …  4252  4538  4605  4711  4810  4895
- "AFG"    2  "Afghanistan"  2805      490   415   442   476   425   422
- "AFG"    2  "Afghanistan"  2513      230   379   315   203   367   360
- "AFG"    2  "Afghanistan"  2513       62    55    60    72    78    89
- "AFG"    2  "Afghanistan"  2514      247   195   178   191   200   200
- "AFG"    2  "Afghanistan"  2514  …    69    71    82    73    77    76
- "AFG"    2  "Afghanistan"  2517       21    18    14    14    14    12
- ⋮                                ⋱                       ⋮        
- "ZWE"  181  "Zimbabwe"     2948       21    23    25    25    30    31
- "ZWE"  181  "Zimbabwe"     2948      341   385   418   457   426   451
- "ZWE"  181  "Zimbabwe"     2960        9     5    15    15    15    15
- "ZWE"  181  "Zimbabwe"     2960       15    18    29    40    40    40
- "ZWE"  181  "Zimbabwe"     2961  …     0     0     0     0     0     0
- "ZWE"  181  "Zimbabwe"     2928        0     0     0     0     0     0
-1×63 Matrix{AbstractString}:
- "Area Abbreviation"  "Area Code"  "Area"  …  "Y2010"  "Y2011"  "Y2012"  "Y2013"
-)
-```
-
-| Area Abbrevation | Area Code |     Area      |
-|      :---:       |   :---:   |     :---:     |
-|"AFG"             |     2     | "Afghanistan" |
-|"AFG"             |     2     | "Afghanistan" |
-|"AFG"             |     2     | "Afghanistan" |
-|"AFG"             |     2     | "Afghanistan" |
-|"AFG"             |     2     | "Afghanistan" |
-
+|  | Area Abbrevation | Area Code |     Area      | Item Code |          Item            | Element Code | Element |    Unit     | ... more|
+|  |      :---:       |   :---:   |     :---:     |  :---:    |          :---:           |    :---:     |  :---:  |    :---:    |  :---:  |
+|1 |"AFG"             |     2     | "Afghanistan" |2848       |   "Wheat and products"   |5142          | "Food"  |"1000 tonnes"|         |
+|2 |"AFG"             |     2     | "Afghanistan" |2848       |"Rice (Milled Equivalent)"|5142          | "Food"  |"1000 tonnes"|         |
+|3 |"AFG"             |     2     | "Afghanistan" |2761       |  "Barley and products"   |5521          | "Feed"  |"1000 tonnes"|         |
+|4 |"AFG"             |     2     | "Afghanistan" |2680       |  "Barley and products"   |5542          | "Food"  |"1000 tonnes"|         |
+|5 |"AFG"             |     2     | "Afghanistan" |2905       |   "Maize and products"   |5521          | "Feed"  |"1000 tonnes"|         |
+|6 |"AFG"             |     2     | "Afghanistan" |2907       |   "Maize and products"   |5542          | "Food"  |"1000 tonnes"|         |
+|7 |"AFG"             |     2     | "Afghanistan" |2908       |  "Millet and products"   |5542          | "Food"  |"1000 tonnes"|         |
+|8 |"AFG"             |     2     | "Afghanistan" |2909       |     "Cereals, Other"     |5542          | "Food"  |"1000 tonnes"|         |
+|9 |"AFG"             |     2     | "Afghanistan" |2911       |  "Potatoes and products" |5542          | "Food"  |"1000 tonnes"|         |
+|10|"AFG"             |     2     | "Afghanistan" |2912       |       "Sugar cane"       |5521          | "Feed"  |"1000 tonnes"|         |
+|...more|             |           |               |2913       |                          |              |         |             |         |
+|21477|"ZWE"          |    181    |  "Zimbabwe"   |2928       |     "Miscellaneous"      |5142          | "Food"  |"1000 tonnes"|         |
 
 #### Create tensor
 
