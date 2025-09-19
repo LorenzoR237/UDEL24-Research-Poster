@@ -1,5 +1,7 @@
 # UDEL24-Research-Poster
 
+![Slide1](https://github.com/user-attachments/assets/f1c2a153-a240-4fc8-a723-8156af2a2ae0)
+
 ## Excitation and Emission Matrix(EEM) dataset
 
 Website: https://gitlab.com/tensors/tensor_data_eem/-/blob/master/README.md?ref_type=heads
