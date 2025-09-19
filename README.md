@@ -1,6 +1,6 @@
 # UDEL24-Research-Poster
 
-![Slide1](https://github.com/user-attachments/assets/f1c2a153-a240-4fc8-a723-8156af2a2ae0)
+<img width="720" height="532" alt="Slide1" src="https://github.com/user-attachments/assets/cc15b869-2b1d-4020-8b66-73ed06d621fe" />
 
 ## Excitation and Emission Matrix(EEM) dataset
 
