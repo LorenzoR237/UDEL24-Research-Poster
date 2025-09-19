@@ -1,5 +1,7 @@
 # UDEL24-Research-Poster
 
+<img width="1199" height="887" alt="Screenshot 2025-09-19 at 12 58 20 PM" src="https://github.com/user-attachments/assets/74b89a82-8b82-4360-ac49-84484fc53139" />
+
 ## Excitation and Emission Matrix(EEM) dataset
 
 Website: https://gitlab.com/tensors/tensor_data_eem/-/blob/master/README.md?ref_type=heads
